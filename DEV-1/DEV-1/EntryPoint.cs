@@ -8,13 +8,11 @@ namespace DEV_1
             if (args.Length != 1)
             {
                 Console.Write("Wrong number of arguments.");
+                return;
             }
-            else
-            {
-                SerialIdenticalSymbols serialIdenticalSymbols = new SerialIdenticalSymbols();
-                int MaxNumberOfSerialIdenticalSymbols = serialIdenticalSymbols.GetMaxNumberOfSerialIdenticalSymbols(args[0]);
-                Console.WriteLine("Max value of serial identical symbols is: " + MaxNumberOfSerialIdenticalSymbols);
-            }
+            SerialIdenticalSymbols serialIdenticalSymbols = new SerialIdenticalSymbols();
+            int MaxNumberOfSerialIdenticalSymbols = serialIdenticalSymbols.GetMaxNumberOfSerialIdenticalSymbols(args[0]);
+            Console.WriteLine("Max value of serial identical symbols is: " + MaxNumberOfSerialIdenticalSymbols);
         }
     }
 }
