@@ -8,9 +8,18 @@ namespace DEV_2
         static void Main(string[] args)
         {
             Console.WriteLine("Please enter your string: ");
-            StringBuilder theString = new StringBuilder(Console.ReadLine());
-            StringCreator newString = new StringCreator();
-            newString.GetNewStringOddIndices(theString);
+            string theString = Console.ReadLine();
+            if (theString.Length < 1)
+            {
+                Console.WriteLine("The string is empty. Try again.");
+                return;
+            }
+            StringBuilder newString = new StringBuilder();
+            for (int i = 0; i < theString.Length; i += 2)
+            {
+                newString.Append(theString[i]);
+            }
+            Console.WriteLine($"New string: {newString}");
         }
     }
 }
