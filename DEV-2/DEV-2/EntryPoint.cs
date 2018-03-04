@@ -9,9 +9,9 @@ namespace DEV_2
         {
             Console.WriteLine("Please enter your string: ");
             string theString = Console.ReadLine();
-            if (theString.Length < 1)
+            if (theString.Length == 1)
             {
-                Console.WriteLine("The string is empty. Try again.");
+                Console.WriteLine("The string is empty.");
                 return;
             }
             StringBuilder newString = new StringBuilder();
