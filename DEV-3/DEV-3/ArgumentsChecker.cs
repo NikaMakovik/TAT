@@ -2,8 +2,15 @@
 
 namespace DEV_3
 {
+    /// <summary>
+    /// This Class checks arguments to be corresponding.
+    /// </summary>
     class ArgumentsChecker
     {
+        /// <summary>
+        /// This Method checks string arguments to be corresponding.
+        /// </summary>
+        /// <param name="args">Initial arguments.</param>
         public void CheckStringArgs(string[] args)
         {
             if (args.Length != 2)
