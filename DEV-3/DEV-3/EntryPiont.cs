@@ -6,12 +6,17 @@ namespace DEV_3
     {
         static void Main(string[] args)
         {
-            ArgumentsChecker ArgsCheck = new ArgumentsChecker();
-            ArgsCheck.CheckStringArgs(args);
-            int NumberToConvert = Int32.Parse(args[0]);
-            int NumeralBaseToConvert = Int32.Parse(args[1]);
-            NumbersWorker NewNumbersJob = new NumbersWorker();
-            Console.WriteLine($"New Number: {NewNumbersJob.ConvertToNewNumeralSystem(NumberToConvert, NumeralBaseToConvert)}");
+            try
+            {
+                int NumberToConvert = int.Parse(args[0]);
+                int NumeralBaseToConvert = int.Parse(args[1]);
+                NumberConverter NewNumbersJob = new NumberConverter(NumberToConvert, NumeralBaseToConvert);
+                Console.WriteLine($"New Number: {NewNumbersJob.ConvertToNewNumeralSystem()}");
+                }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Ошибка: " + ex.Message);
+            }
         }
     }
 }
