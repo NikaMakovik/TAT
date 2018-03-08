@@ -12,10 +12,10 @@ namespace DEV_3
                 int NumeralBaseToConvert = int.Parse(args[1]);
                 NumberConverter NewNumbersJob = new NumberConverter(NumberToConvert, NumeralBaseToConvert);
                 Console.WriteLine($"New Number: {NewNumbersJob.ConvertToNewNumeralSystem()}");
-                }
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                Console.WriteLine("Ошибка: " + ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
     }

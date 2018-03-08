@@ -55,6 +55,7 @@ namespace DEV_3
                 Number[lenght] = temp;
             }
         }
+
         /// <summary>
         /// This Method converts initial number to new number from decimal numeral system to another one (from 2 to 20).
         /// </summary>
@@ -72,6 +73,6 @@ namespace DEV_3
             }
             ReverseNumber(NewNumber);
             return NewNumber;
-        } 
+        }
     }
 }
