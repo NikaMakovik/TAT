@@ -4,7 +4,7 @@ using System;
 namespace DEV_3
 {
     /// <summary>
-    /// This Class converts numbers to other.
+    /// This Class converts numbers to other numeral systems.
     /// </summary>
     public class NumberConverter
     {
@@ -77,7 +77,7 @@ namespace DEV_3
         /// <param name="InitialNumber">Initial number to be converted.</param>
         /// <param name="NumeralBase">Base of new numeral system.</param>
         /// <returns></returns>
-        public StringBuilder ConvertToNewNumeralSystem()//check//1 10 return 1// 
+        public StringBuilder ConvertToNewNumeralSystem()
         {
             int RemainderOfDivision;
             for (int i = 0; InitialNumber != 0; i++)
