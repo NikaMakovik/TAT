@@ -4,13 +4,28 @@ using System;
 namespace DEV_3
 {
     /// <summary>
-    /// This Class works with numbers.
+    /// This Class converts numbers to other.
     /// </summary>
-    class NumberConverter
+    public class NumberConverter
     {
         StringBuilder NewNumber = new StringBuilder();
         private int baseOfNewNumeralSystem;
-        public int InitialNumber { get; set; }
+        private int initialNumber;
+        public int InitialNumber
+        {
+            get
+            {
+                return initialNumber;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException();
+                }
+                initialNumber = value;
+            }
+        }
         public int BaseOfNewNumeralSystem
         {
             get
@@ -62,7 +77,7 @@ namespace DEV_3
         /// <param name="InitialNumber">Initial number to be converted.</param>
         /// <param name="NumeralBase">Base of new numeral system.</param>
         /// <returns></returns>
-        public StringBuilder ConvertToNewNumeralSystem()
+        public StringBuilder ConvertToNewNumeralSystem()//check//1 10 return 1// 
         {
             int RemainderOfDivision;
             for (int i = 0; InitialNumber != 0; i++)
