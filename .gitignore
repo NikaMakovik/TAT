@@ -2,3 +2,4 @@ bin/
 obj/
 .vs/
 .gitattributes
+DEV-3/packages/

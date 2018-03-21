@@ -4,13 +4,28 @@ using System;
 namespace DEV_3
 {
     /// <summary>
-    /// This Class works with numbers.
+    /// This Class converts numbers to other numeral systems.
     /// </summary>
-    class NumberConverter
+    public class NumberConverter
     {
         StringBuilder NewNumber = new StringBuilder();
         private int baseOfNewNumeralSystem;
-        public int InitialNumber { get; set; }
+        private int initialNumber;
+        public int InitialNumber
+        {
+            get
+            {
+                return initialNumber;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException();
+                }
+                initialNumber = value;
+            }
+        }
         public int BaseOfNewNumeralSystem
         {
             get
