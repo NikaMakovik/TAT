@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace DEV_2
 {
@@ -7,19 +6,18 @@ namespace DEV_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter your string: ");
-            string theString = Console.ReadLine();
-            if (theString.Length == 1)
+            try
             {
-                Console.WriteLine("The string is empty.");
-                return;
+                Console.WriteLine("Please enter your string: ");
+                string oldString = Console.ReadLine();
+                LineBuilder lineBuilder = new LineBuilder();
+                string newString = lineBuilder.BuildNewLineFromOddIndeciesOfOld(oldString);
+                Console.WriteLine($"New string: {newString}");
             }
-            StringBuilder newString = new StringBuilder();
-            for (int i = 0; i < theString.Length; i += 2)
+            catch(ArgumentException)
             {
-                newString.Append(theString[i]);
+                Console.WriteLine("ArgumentException");
             }
-            Console.WriteLine($"New string: {newString}");
+        }
         }
     }
-}
