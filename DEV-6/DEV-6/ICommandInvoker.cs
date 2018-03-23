@@ -2,14 +2,31 @@
 
 namespace DEV_6
 {
-    class ICommandInvoker
+    /// <summary>
+    /// Invokes actions on commands.
+    /// </summary>
+    class InterfaceCommandInvoker
     {
-        RepositoryAddItem repositoryAddItem = new RepositoryAddItem();
-        RepositoryCountTypes repositoryCountTypes = new RepositoryCountTypes();
-        RepositoryCountAll repositoryCountAll = new RepositoryCountAll();
-        RepositoryAveragePrice repositoryAveragePrice = new RepositoryAveragePrice();
-        RepositoryAveragePriceType repositoryAveragePriceType = new RepositoryAveragePriceType();
-        private Dictionary<string, ICommands> commandsDictionary = new Dictionary<string, ICommands>();
+        RepositoryAddItem repositoryAddItem;
+        RepositoryCountTypes repositoryCountTypes;
+        RepositoryCountAll repositoryCountAll;
+        RepositoryAveragePrice repositoryAveragePrice;
+        RepositoryAveragePriceType repositoryAveragePriceType;
+        private Dictionary<string, ICommands> commandsDictionary;
+
+        public InterfaceCommandInvoker()
+        {
+            repositoryAddItem = new RepositoryAddItem();
+            repositoryCountTypes = new RepositoryCountTypes();
+            repositoryCountAll = new RepositoryCountAll();
+            repositoryAveragePrice = new RepositoryAveragePrice();
+            repositoryAveragePriceType = new RepositoryAveragePriceType();
+            commandsDictionary = new Dictionary<string, ICommands>();
+        }
+
+        /// <summary>
+        /// Invoke actions on commands.
+        /// </summary>
         public void CommandRequest(string action)
         {
             MadeDictionary();

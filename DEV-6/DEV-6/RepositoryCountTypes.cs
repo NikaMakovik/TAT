@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace DEV_6
 {
+    /// <summary>
+    /// Does CountTypes command.
+    /// </summary>
     class RepositoryCountTypes : ICommands
     {
+        /// <summary>
+        /// Execute method for count types command. 
+        /// </summary>
         public void Execute()
         {
-            List<string> types = RepositoryOfItems.GetListOfItems().GetTypes();
-            int counter = 0;
-            foreach (string type in types)
-            {
-                counter++;
-            }
-            Console.WriteLine($"  types {counter}");
+            Console.WriteLine($"Number of types: {RepositoryOfItems.GetListOfItems().GetNumberOfTypes()}");
         }
     }
 }

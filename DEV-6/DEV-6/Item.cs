@@ -1,8 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 
 namespace DEV_6
 {
+    /// <summary>
+    /// Class-container.
+    /// </summary>
     class Item : IEnumerable 
     {
         public string Type
@@ -10,6 +12,22 @@ namespace DEV_6
             get
             {
                 return type;
+            }
+            private set { }
+        }
+        public int Amount
+        {
+            get
+            {
+                return amount;
+            }
+            private set { }
+        }
+        public float Cost
+        {
+            get
+            {
+                return cost;
             }
             private set { }
         }
@@ -27,6 +45,10 @@ namespace DEV_6
             this.cost = cost;
         }
 
+        /// <summary>
+        /// Redefinition of GetEnumerator method of IEnumerator interface.
+        /// </summary>
+        /// <returns>Throw Exception</returns>
         public IEnumerator GetEnumerator()
         {
             throw new System.NotImplementedException();

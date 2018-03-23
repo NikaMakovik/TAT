@@ -2,8 +2,14 @@
 
 namespace DEV_6
 {
+    /// <summary>
+    /// Reads data from console.
+    /// </summary>
     public class ConsoleReader
     {
+        /// <summary>
+        /// Creates console menu.
+        /// </summary>
         public void ConsoleMenu()
         {
             while (true)
@@ -14,13 +20,13 @@ namespace DEV_6
                 Console.WriteLine("Use 'average price' to count average price of items in the repository.");
                 Console.WriteLine("Use 'average price + type' to count average price of items of defined type in the repository.");
                 Console.WriteLine("Use 'exit' to exit from the program.");
-                ICommandInvoker commandInvoker = new ICommandInvoker();
+                InterfaceCommandInvoker interfaceCommandInvoker = new InterfaceCommandInvoker();
                 string action = Console.ReadLine();
                 if (action == "exit")
                 {
                     return;
                 }
-                commandInvoker.CommandRequest(action);
+                interfaceCommandInvoker.CommandRequest(action);
             }
         }
     }

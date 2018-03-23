@@ -2,8 +2,14 @@
 
 namespace DEV_6
 {
+    /// <summary>
+    /// Does AddItem command.
+    /// </summary>
     class RepositoryAddItem : ICommands
     {
+        /// <summary>
+        /// Execute method for add item command.
+        /// </summary>
         public void Execute()
         {
             Console.WriteLine("Enter the type of an item.");
