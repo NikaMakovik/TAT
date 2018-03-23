@@ -5,7 +5,7 @@ namespace DEV_6
     /// <summary>
     /// Class-container.
     /// </summary>
-    class Item : IEnumerable 
+    public class Item : IEnumerable 
     {
         public string Type
         {

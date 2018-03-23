@@ -5,7 +5,7 @@ namespace DEV_6
     /// <summary>
     /// Singleton Pattern to keep only one repository with items. 
     /// </summary>
-    class RepositoryOfItems
+    public class RepositoryOfItems
     {
         private static RepositoryOfItems listOfItems;
         private List<Item> items = new List<Item>();
