@@ -1,0 +1,57 @@
+[
+	{
+            "brand":"BMW X5",
+            "model":"3.0",
+            "carcaseType":"crossover",
+            "transmissionType":"mechanic",
+            "engineType":"diesel",
+            "engineSize":"3",
+            "enginePower":"170",
+            "climateControle":"conditioner",
+            "cabinType":"combined"
+        },
+        {
+            "brand":"BMW X5",
+            "model":"4.4",
+            "carcaseType":"crossover",
+            "transmissionType":"mechanic",
+            "engineType":"petrol",
+            "engineSize":"4.4",
+            "enginePower":"210",
+            "climateControle":"conditioner",
+            "cabinType":"leather"
+        },
+        {
+            "brand":"BMW X5",
+            "model":"4.6",
+            "carcaseType":"crossover",
+            "transmissionType":"automatic",
+            "engineType":"petrol",
+            "engineSize":"4.6",
+            "enginePower":"255",
+            "climateControle":"climate-controle",
+            "cabinType":"leather"
+        },
+        {
+            "brand":"Tesla",
+            "model":"Model S",
+            "carcaseType":"hatchback",
+            "transmissionType":"automatic",
+            "engineType":"electric",
+            "engineSize":"75",
+            "enginePower":"285",
+            "climateControle":"conditioner",
+            "cabinType":"leather"
+        },
+        {
+            "brand":"Tesla",
+            "model":"Model S",
+            "carcaseType":"hatchback",
+            "transmissionType":"automatic",
+            "engineType":"electric",
+            "engineSize":"100",
+            "enginePower":"420",
+            "climateControle":"climate-controle",
+            "cabinType":"leather"
+        }
+]
