@@ -17,8 +17,6 @@ namespace DEV_8
             string sameLastName = eventArgs.LastName;
             Console.WriteLine($"Similar last name '{sameLastName}' has detected. Here's list of namesake:");
 
-            Person person = new Person();
-            person.LastName = sameLastName;
             List<Person> newList = new List<Person>();
             foreach (Person p in ListOfPersonas.GetListOfPersonas().GetPersonas())
             {
@@ -27,7 +25,6 @@ namespace DEV_8
                     p.OutputPerson();
                     newList.Add(p);
                 }
-
             }
             string path = @"D:\Workspace\TAT\DEV-8\DEV-8\listOfPersonas.json";
             using (StreamWriter file = File.CreateText(path))

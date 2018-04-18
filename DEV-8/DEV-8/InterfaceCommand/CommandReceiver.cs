@@ -30,7 +30,7 @@ namespace DEV_8
         {
             SameLastNamesHappened?.Invoke(this, eventArgs);
         }
-        
+
         /// <summary>
         /// Represents user menu.
         /// </summary>
@@ -81,15 +81,15 @@ namespace DEV_8
             newPerson.Age = age;
 
 
-            bool cont = false;
+            bool key = false;
             foreach (Person p in list)
             {
                 if (p.LastName == newPerson.LastName)
                 {
-                    cont = true;
+                    key = true;
                 }
             }
-            if (cont)
+            if (key)
             {
                 SameLastNamesHappenedEventArgs args = new SameLastNamesHappenedEventArgs();
                 args.LastName = newPerson.LastName;
@@ -139,7 +139,7 @@ namespace DEV_8
         public string MostPopularFemaleName()
         {
             List<string> femaleNames = new List<string>();
-
+            
             foreach (Person person in list)
             {
                 if (person.Sex == "f")
@@ -147,8 +147,16 @@ namespace DEV_8
                     femaleNames.Add(person.FirstName);
                 }
             }
-            var mostPopularName = femaleNames.GroupBy(name => name).OrderBy(name => name.Count()).First();
-            return mostPopularName.Key;
+            if (femaleNames.Count == 0)
+            {
+                string exception = "No females in list.";
+                return exception;
+            }
+            else
+            {
+                var mostPopularName = femaleNames.GroupBy(name => name).OrderBy(name => name.Count()).First();
+                return mostPopularName.Key;
+            }
         }
     }
 }
