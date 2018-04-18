@@ -22,6 +22,25 @@ namespace DEV_8
             this.list = list;
         }
 
+        private Person NewPersonCreator()
+        {
+            Person newPerson = new Person();
+
+            Console.WriteLine("Please input first name");
+            newPerson.FirstName = Console.ReadLine();
+            Console.WriteLine("Please input second name");
+            newPerson.LastName = Console.ReadLine();
+            Console.WriteLine("Please input sex (m/f)");
+            if (newPerson.Sex != "f" && newPerson.Sex != "m")
+            {
+                throw new UndefinedSexException($"Sex {newPerson.Sex} not found. Please try again to add new person. ");
+            }
+            Console.WriteLine("Please input age");
+            int age = int.Parse(Console.ReadLine());
+            newPerson.Age = age;
+            return newPerson;
+        }
+
         /// <summary>
         /// Invokes event SameLastNamesHappened.
         /// </summary>
@@ -63,24 +82,13 @@ namespace DEV_8
                 commandInvoker.Run();
             }
         }
+
         /// <summary>
         /// Adds a person to list.
         /// </summary>
         public void AddPerson()
         {
-            Person newPerson = new Person();
-
-            Console.WriteLine("Please input first name");
-            newPerson.FirstName = Console.ReadLine();
-            Console.WriteLine("Please input second name");
-            newPerson.LastName = Console.ReadLine();
-            Console.WriteLine("Please input sex (m/f)");
-            newPerson.Sex = Console.ReadLine();
-            Console.WriteLine("Please input age");
-            Int32.TryParse(Console.ReadLine(), out int age);
-            newPerson.Age = age;
-
-
+            Person newPerson = NewPersonCreator();
             bool key = false;
             foreach (Person p in list)
             {
@@ -95,10 +103,10 @@ namespace DEV_8
                 args.LastName = newPerson.LastName;
                 OnSameLastNamesHappened(args);
             }
-
             list.Add(newPerson);
             Console.WriteLine("Successfully added.");
         }
+
         /// <summary>
         /// Outputs all information.
         /// </summary>
@@ -109,6 +117,7 @@ namespace DEV_8
             commandInvoker.SetCommand(new MostPopularFemaleNameCommand());
             commandInvoker.Run();
         }
+
         /// <summary>
         /// Finds and outputs an average age.
         /// </summary>
@@ -125,6 +134,7 @@ namespace DEV_8
             float averageAge = summaryAge / counter;
             return averageAge;
         }
+
         /// <summary>
         /// Finsd and outputs an oldest person.
         /// </summary>
@@ -133,13 +143,14 @@ namespace DEV_8
             var oldestPerson = list.OrderByDescending(person => person.Age).First();
             return oldestPerson;
         }
+
         /// <summary>
         /// Find and outputs the most popular female name.
         /// </summary>
         public string MostPopularFemaleName()
         {
             List<string> femaleNames = new List<string>();
-            
+
             foreach (Person person in list)
             {
                 if (person.Sex == "f")

@@ -13,9 +13,16 @@ namespace DEV_8
                 commandInvoker.SetCommand(new UserMenuCommand());
                 commandInvoker.Run();
             }
+            catch (UndefinedSexException exception)
+            {
+                Console.WriteLine(exception.Message);
+                commandInvoker.SetCommand(new AddPersonCommand());
+                commandInvoker.Run();
+            }
             catch (Exception exception)
             {
                 Console.WriteLine(exception.Message);
+
             }
         }
     }

@@ -5,60 +5,59 @@ namespace DEV_8.Tests
 {
     public class CommandReceiverTest
     {
-        [Theory]
-        [InlineData("jesus", "christ", "m", 33, 33)]
-        public void AverageAgeTest_GivenPerson_CorrectResult(string firstName, string secondName, string sex, int age, float expected)
+        static List<Person> list = new List<Person>()
         {
-            Person person = new Person
+            new Person()
             {
-                FirstName = firstName,
-                LastName = secondName,
-                Sex = sex,
-                Age = age
-            };
-            List<Person> listOfPersonas = new List<Person>();
-            listOfPersonas.Add(person);
-            CommandReceiver receiver = new CommandReceiver(listOfPersonas);
+                FirstName = "thor",
+                LastName = "odinson",
+                Sex = "m",
+                Age = 10
+            },
+            new Person()
+            {
+                FirstName = "loki",
+                LastName = "lafeyson",
+                Sex = "m",
+                Age = 9
+            },
+            new Person()
+            {
+                FirstName = "sif",
+                LastName = "lady",
+                Sex = "f",
+                Age = 8
+            }
+        };
 
+        [Theory]
+        [InlineData(9)]
+        public void AverageAgeTest_GivenPerson_CorrectResult(float expected)
+        {
+            CommandReceiver receiver = new CommandReceiver(list);
             Assert.Equal(expected, receiver.AverageAge());
         }
-        
+
         [Theory]
-        [InlineData("jesus", "christ", "m", 33)]
+        [InlineData("thor", "odinson", "m", 10)]
         public void OldestPersonTest_GivenPerson_CorrectResult(string firstName, string secondName, string sex, int age)
         {
-            Person person = new Person
+            Person expectedPerson = new Person
             {
                 FirstName = firstName,
                 LastName = secondName,
                 Sex = sex,
                 Age = age
             };
-            Person expectedPerson = new Person();
-            expectedPerson = person;
-            List<Person> listOfPersonas = new List<Person>();
-            listOfPersonas.Add(person);
-            CommandReceiver receiver = new CommandReceiver(listOfPersonas);
-
+            CommandReceiver receiver = new CommandReceiver(list);
             Assert.Equal(expectedPerson, receiver.OldestPerson());
         }
 
         [Theory]
-        [InlineData("jesus", "christ", "m", 33, "No females in list.")]
-        [InlineData("mary", "blessed", "f", 49, "mary")]
-        public void MostPopularFemaleNameTest_GivenPerson_CorrectResult(string firstName, string secondName, string sex, int age, string expected)
+        [InlineData("sif")]
+        public void MostPopularFemaleNameTest_GivenPerson_CorrectResult(string expected)
         {
-            Person person = new Person
-            {
-                FirstName = firstName,
-                LastName = secondName,
-                Sex = sex,
-                Age = age
-            };
-            List<Person> listOfPersonas = new List<Person>();
-            listOfPersonas.Add(person);
-            CommandReceiver receiver = new CommandReceiver(listOfPersonas);
-
+            CommandReceiver receiver = new CommandReceiver(list);
             Assert.Equal(expected, receiver.MostPopularFemaleName());
         }
     }
