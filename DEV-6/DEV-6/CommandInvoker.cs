@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 
 namespace DEV_6
 {
     /// <summary>
     /// Invokes actions on commands.
     /// </summary>
-    class InterfaceCommandInvoker
+    class CommandInvoker
     {
         RepositoryAddItem repositoryAddItem;
         RepositoryCountTypes repositoryCountTypes;
@@ -14,7 +15,7 @@ namespace DEV_6
         RepositoryAveragePriceType repositoryAveragePriceType;
         private Dictionary<string, ICommands> commandsDictionary;
 
-        public InterfaceCommandInvoker()
+        public CommandInvoker()
         {
             repositoryAddItem = new RepositoryAddItem();
             repositoryCountTypes = new RepositoryCountTypes();

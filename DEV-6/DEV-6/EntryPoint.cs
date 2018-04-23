@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            ConsoleReader consoleReader = new ConsoleReader();
-            consoleReader.ConsoleMenu();
+            CommandReader commandReader = new CommandReader();
+            commandReader.ConsoleMenu();
         }
     }
 }
