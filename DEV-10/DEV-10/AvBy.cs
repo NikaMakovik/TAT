@@ -23,13 +23,12 @@ namespace DEV_10
         }
         private void CarFinder()
         {
-            BrandPage brandPage = new BrandPage(WebDriver);
+            BrandsPage brandsPage = new BrandsPage(WebDriver);
 
-
-            brandPage.GetListOfBrands();
+            brandsPage.GetListOfBrands();
             GetCarBrand();
             
-            if (!CarBrandChecker(brandPage.listOfBrands))
+            if (!CarBrandChecker(brandsPage.listOfBrands))
             {
                 Console.WriteLine("car brand is not valid");
             }

@@ -10,7 +10,7 @@ namespace DEV_10
         static void Main(string[] args)
         {
             AvBy avby = new AvBy();
-            avby.CarFinder();
+            
         }
     }
 }

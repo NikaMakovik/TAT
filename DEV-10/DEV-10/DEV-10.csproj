@@ -48,8 +48,8 @@
   <ItemGroup>
     <Compile Include="AvBy.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="BrandPage.cs" />
-    <Compile Include="ModelPage.cs" />
+    <Compile Include="BrandsPage.cs" />
+    <Compile Include="ModelsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

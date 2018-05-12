@@ -13,7 +13,6 @@ namespace DEV_10
     {
         private readonly By ShowAllBrandsButton = By.XPath("//input[@id='model_id']");
         private readonly By Brands = By.XPath("ul[@class='brandsitem brandsitem--primary']");
-        private readonly By Message = By.XPath($"//span[contains(text(),'{}')]");
         private IWebDriver webDriver;
         public List<string> listOfBrands;
 
@@ -35,8 +34,9 @@ namespace DEV_10
         }
         public BrandsPage GoToBrand(string brand)
         {
-            
-        webDriver.FindElement("").Click();
+
+            webDriver.FindElement("").Click();
+            return this;
         }
     }
 }
