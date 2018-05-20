@@ -33,11 +33,9 @@ namespace DEV_7
             {
                 case "add options":
                     commandInvoker.SetCommand(new SetOptionsAction());                    
-                    commandInvoker.Run();
                     break;
                 case "check storage":
-                    commandInvoker.SetCommand(new CheckStorehouseAction());
-                    commandInvoker.Run();
+                    commandInvoker.SetCommand(new CheckStorehouseAction());                    
                     break;
                 case "exit":
                     key = false;
@@ -48,6 +46,7 @@ namespace DEV_7
                     UsersActionsMenu();
                     break;
             }
+            commandInvoker.Run();
             return key;
         }        
     }

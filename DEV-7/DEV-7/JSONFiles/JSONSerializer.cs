@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 using Newtonsoft.Json;
 
 namespace DEV_7
@@ -11,7 +7,8 @@ namespace DEV_7
     {
         public void Serialize()
         {
-            using (FileStream stream = new FileStream(@"D:\Workspace\TAT\DEV-7\DEV-7\storehouse.json",
+            string path = @"D:\Workspace\TAT\DEV-7\DEV-7\storehouse.json";
+            using (FileStream stream = new FileStream(path,
                 FileMode.Open))
             {
             }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DEV_7
+﻿namespace DEV_7
 {
     /// <summary>
     /// Does 'add options' command.
