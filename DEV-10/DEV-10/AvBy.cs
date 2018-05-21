@@ -15,7 +15,6 @@ namespace DEV_10
 
         public void MainFunc()
         {
-
             WebDriver = new FirefoxDriver();
             WebDriver.Manage().Window.Maximize();
             SaveListWithBrands();
